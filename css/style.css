@@ -35,6 +35,10 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1, h2, h3, h4, h5, h6{font-size: inherit;font-weight: 400;}
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     height: 100%;
     line-height: 1;
@@ -306,7 +310,7 @@ body{
 }
 
 .about-me__text {
-    font-size: 22px;
+    font-size: 24px;
     line-height: calc(18/14*100%);
     text-align: center;
 }
