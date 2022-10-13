@@ -69,7 +69,6 @@ body{
     padding: 0 15px;
     margin: 0px auto;
     box-sizing: content-box;
-    justify-content: space-around;
 }
 
 ._ibg{
@@ -113,6 +112,12 @@ body{
     padding: 5px 0;
 }
 
+@media (max-width: 500px){
+    .header__menu{
+        display: none;
+    }
+}
+
 .menu__list {
     display: flex;
     justify-content: space-between;
@@ -147,6 +152,122 @@ body{
 
 .link{
     color: black;
+}
+
+/* ---------------------------------------Бургер------------------------------------------------------------ */
+
+.burger{
+    position: fixed;
+    background-color: #FAFAFA;
+    border-radius: 25px;
+}
+
+@media (min-width: 501px){
+    .burger{
+        display: none;
+    }
+}
+
+.menu-btn {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	z-index:2;
+	overflow: hidden;
+    padding-left: 20px;
+}
+.menu-btn span {
+	width: 33px;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 9px);
+}
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 9px);
+}
+
+.menu__burger {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+    background: #FAFAFA;
+	transform: translateX(-100%);
+	transition: transform 0.5s; 
+}
+
+.burger__slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.burger__ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.menu__burger.active {
+	transform: translateX(0);
+}
+.menu__burger li {
+	list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+}
+
+.menu__burger a{
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
+    color: black;
+}
+
+.menu__burger a:active{
+    transform: scale(1.1);
+}
+
+.menu-btn.active span:nth-of-type(1) {
+    display: none;
+}
+
+.menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+}
+
+.menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+}
+
+body.noscroll {
+    overflow: hidden;
 }
 
 /*-----------------------------------PAGE----------------------------------------*/
